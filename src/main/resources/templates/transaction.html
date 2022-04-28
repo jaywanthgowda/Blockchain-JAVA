@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+        <h1>Payment gateway </h1>
+        <hr>
+        <h2>Create Transaction</h2>
+
+        <form action="#" th:action="@{/savepost}" th:object="${trans}" method="post">
+            <input type="text" th:field="*{user_address}" placeholder="user_address" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{destination_address}" placeholder="destination_address" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{network}" placeholder="network" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{tokens}" placeholder="tokens" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{message}" placeholder="message" class="form-control mb-4 col-4">
+            
+
+            <button type="submit" class="btn btn-info col-2"> Pay</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/}"> Back to Home</a>
+    </div>
+</body>
+</html>

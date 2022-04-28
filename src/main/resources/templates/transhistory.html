@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h2>Transaction history</h2>
+  <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                	<th>Block no.</th>
+                    <th>User address</th>
+                    <th>Destination address</th>
+                    <th>Network</th>
+                    <th>Tokens</th>
+                    <th>Message</th>
+                    <th>TimeStamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="trans : ${listPosts}">
+                	<td th:text="${trans.id}"></td>
+                    <td th:text="${trans.user_address}"></td>
+                    <td th:text="${trans.destination_address}"></td>
+                    <td th:text="${trans.network}"></td>
+                    <td th:text="${trans.tokens}"></td>
+                    <td th:text="${trans.message}"></td>
+                    <td th:text="${trans.timestamp}"></td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</body>
+</html>
